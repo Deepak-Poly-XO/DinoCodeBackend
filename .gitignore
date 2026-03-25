@@ -1,0 +1,27 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# VS Code
+.vscode/
+
+# Secrets — NEVER commit these
+application.properties
+application-local.properties
+application-prod.properties
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/

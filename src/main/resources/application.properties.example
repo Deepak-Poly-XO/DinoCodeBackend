@@ -1,0 +1,14 @@
+spring.application.name=demo
+
+# Database — fill in your values
+spring.datasource.url=jdbc:postgresql://YOUR_HOST/YOUR_DB
+spring.datasource.username=YOUR_USERNAME
+spring.datasource.password=YOUR_PASSWORD
+
+# JPA
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.open-in-view=false
+
+# JWT
+# Set JWT_SECRET as environment variable in production
