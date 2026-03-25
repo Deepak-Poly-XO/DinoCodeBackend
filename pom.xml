@@ -11,6 +11,10 @@
 	<groupId>com.example</groupId>
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+<<<<<<< HEAD
+=======
+	<packaging>jar</packaging>
+>>>>>>> bdf585883ecb3a71287cc31a0e018886cee3b394
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -32,6 +36,13 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+<<<<<<< HEAD
+=======
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+>>>>>>> bdf585883ecb3a71287cc31a0e018886cee3b394
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
@@ -39,6 +50,7 @@
 			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
 
+<<<<<<< HEAD
 		<!-- Spring security -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -78,6 +90,14 @@
 		</dependency>
 
 		<dependency>
+=======
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+>>>>>>> bdf585883ecb3a71287cc31a0e018886cee3b394
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
@@ -89,7 +109,10 @@
 		</dependency>
 	</dependencies>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bdf585883ecb3a71287cc31a0e018886cee3b394
 	<build>
 		<plugins>
 			<plugin>
