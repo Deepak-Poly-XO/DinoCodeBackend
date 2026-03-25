@@ -13,10 +13,6 @@ target/
 # VS Code
 .vscode/
 
-# Secrets — NEVER commit these
-application.properties
-application-local.properties
-application-prod.properties
 
 # OS files
 .DS_Store
