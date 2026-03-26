@@ -1,27 +1,44 @@
-
 package com.realtimecode.service;
 
 import com.realtimecode.model.Session;
+import com.realtimecode.repository.SessionRepository;
 import org.springframework.stereotype.Service;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-
+import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.List;
 
 @Service
 public class SessionService {
-  private final Map<String, Session> activeSessions = new ConcurrentHashMap<>();
 
-    public Session createSession(String name) {
-        Session session = new Session(name);
-        activeSessions.put(session.getId(), session);
-        return session;
+    private final SessionRepository sessionRepository;
+
+    public SessionService(SessionRepository sessionRepository) {
+        this.sessionRepository = sessionRepository;
+    }
+
+    public Session createSession(String name, String createdBy) {
+        Session session = new Session(name, createdBy);
+        return sessionRepository.save(session);
     }
 
     public Session getSession(String sessionId) {
-        return activeSessions.get(sessionId);
+        return sessionRepository.findById(sessionId).orElse(null);
     }
 
     public Collection<Session> getAllSessions() {
-        return activeSessions.values();
+        return sessionRepository.findAll();
+    }
+
+    public List<Session> getMysessions(String email) {
+        return sessionRepository.findByCreatedBy(email);
+    }
+
+    public Session saveCode(String sessionId, String code) {
+        Session session = sessionRepository.findById(sessionId).orElse(null);
+        if (session == null) return null;
+
+        session.setCode(code);
+        session.setUpdatedAt(LocalDateTime.now());
+        return sessionRepository.save(session);
     }
 }

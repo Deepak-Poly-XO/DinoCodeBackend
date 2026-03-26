@@ -1,7 +1,16 @@
+C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\config\SecurityConfig.java
 C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\config\WebSocketConfig.java
+C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\controller\AuthController.java
+C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\controller\HealthController.java
 C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\controller\SessionController.java
 C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\controller\WebSocketController.java
 C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\DemoApplication.java
 C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\handler\CodeEditorWebSocketHandler.java
 C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\model\Session.java
+C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\model\User.java
+C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\repository\SessionRepository.java
+C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\repository\UserRepository.java
+C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\security\CustomUserDetailsService.java
+C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\security\JwtFilter.java
+C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\security\JwtUtil.java
 C:\Users\deepa\OneDrive\Documents\Sem 4\DinoCode\backend\src\main\java\com\realtimecode\service\SessionService.java
