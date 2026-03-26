@@ -14,6 +14,10 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public class CodeEditorWebSocketHandler extends TextWebSocketHandler {
 
     private static final ConcurrentHashMap<String, CopyOnWriteArraySet<WebSocketSession>> sessionGroups = new ConcurrentHashMap<>();
+
+    
+    private static final ConcurrentHashMap<String, String> usernameMap = new ConcurrentHashMap<>();
+
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
@@ -21,10 +25,12 @@ public class CodeEditorWebSocketHandler extends TextWebSocketHandler {
         String sessionId = extractSessionId(session);
         String username = extractUsername(session);
 
+   
+        usernameMap.put(session.getId(), username);
+
         sessionGroups.putIfAbsent(sessionId, new CopyOnWriteArraySet<>());
         sessionGroups.get(sessionId).add(session);
 
-        // Broadcast JOIN to everyone else in the session
         broadcast(sessionId, session, Map.of(
             "type", "JOIN",
             "user", username
@@ -35,7 +41,6 @@ public class CodeEditorWebSocketHandler extends TextWebSocketHandler {
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws IOException {
         String sessionId = extractSessionId(session);
 
-        // Broadcast CODE message to everyone else
         broadcast(sessionId, session, Map.of(
             "type", "CODE",
             "content", message.getPayload()
@@ -45,12 +50,16 @@ public class CodeEditorWebSocketHandler extends TextWebSocketHandler {
     @Override
     public void afterConnectionClosed(WebSocketSession session, org.springframework.web.socket.CloseStatus status) throws IOException {
         String sessionId = extractSessionId(session);
-        String username = extractUsername(session);
+
+    
+        String username = usernameMap.getOrDefault(session.getId(), "anonymous");
+
+
+        usernameMap.remove(session.getId());
 
         if (sessionGroups.containsKey(sessionId)) {
             sessionGroups.get(sessionId).remove(session);
 
-            // Broadcast LEAVE to everyone remaining
             broadcast(sessionId, session, Map.of(
                 "type", "LEAVE",
                 "user", username
